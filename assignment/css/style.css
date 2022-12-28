@@ -1,8 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  height: 100%;
+}
+
+
+.content-text h1{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  text-align: center;
+
+}
+
+.content-text p{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.btn-tag{
+  display: flex;
+  /* align-items: center; */
+  gap: 2em;
+  justify-content: center ;
+}
+
+
+.btn-1{
+  height: 60px ;
+  width: 220px;
+  background: #0c5adb;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  border-radius: 1.5rem 1.6rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+transition: all 0.4s ease-in-out;
+
+}
+
+.btn-1::after , ::before{
+  content: '';
+  top: 0;
+  /* left: 0; */
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  background: #00247e;
+  border-radius: 1.5rem 1.6rem;
+width: 0%;
+transition: all 0.4s ease-in-out;
+}
+
+.btn-1:hover::after{
+  width: 100%;
+  height: 100%;
+}
+.btn-1:hover{
+  transform: translateX(-10px);
+
+}
+
+.btn-1:hover span{
+  color: #ccc;
+}
+
+.btn-1 span{
+  font-size: 22px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+/*  */
+.btn-2{
+  height: 60px ;
+  width: 220px;
+  border: 1pt solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  border-radius: 1.5rem 1.6rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+transition: all 0.4s ease-in-out;
+
+}
+
+.btn-2::after{
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  background: #00247e;
+  border-radius: 1.5rem 1.6rem;
+width: 0%;
+transition: all 0.4s ease-in-out;
+}
+
+.btn-2:hover::after{
+  width: 100%;
+  height: 100%;
+}
+.btn-2:hover{
+  transform: translateX(10px);
+}
+
+.btn-2:hover span{
+  color: #fff;
+}
+
+.btn-2 span{
+  font-size: 22px;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+
+
+
 .carousel {
   overflow: hidden;
-  max-width: 600px;
+  max-width: 100%;
+  height: 100vh;
   position: relative;
 }
+
+.carousel__item{
+  width: 100%;
+  height: 100vh !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
+
 
 .carousel .carousel__item,
 .carousel .carousel__item--hidden {
@@ -17,7 +176,8 @@
 
 .carousel .carousel__item--visible {
   display: block;
-  animation: fadeVisibility 0.5s;
+  animation: fadeVisibility 300ms;
+  transition: all 300ms ease-in-out;
 }
 
 .carousel .carousel__actions {
@@ -48,7 +208,7 @@
 
 @keyframes fadeVisibility {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     opacity: 1;
